@@ -3,7 +3,29 @@ html,body{
 }
 .login{
     width: 50%;
+    height: 40%;
     margin: 12% auto;
     border: 1px solid #cccccc;
     padding: 8%;
+    position: relative;
+}
+#user{
+    position: absolute;
+    left: 10%;
+}
+#pass{
+    position: absolute;
+    left: 10%;
+    top: 40px;
+}
+.btn{
+    position: absolute;
+    top: 70px;
+    left: 35%;
+}
+.login_nav{
+    width: 30%;
+    position: absolute;
+    top: 10%;
+    left: 38%;
 }
