@@ -1,0 +1,9 @@
+html,body{
+    font-size: medium;
+}
+.login{
+    width: 50%;
+    margin: 12% auto;
+    border: 1px solid #cccccc;
+    padding: 8%;
+}
