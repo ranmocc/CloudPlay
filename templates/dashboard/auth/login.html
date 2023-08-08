@@ -1,4 +1,5 @@
 <!doctype html>
+<%! from django.shortcuts import reverse %>
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -7,9 +8,12 @@
     <link href="/static/dashboard/css/login.css" rel="stylesheet">
 </head>
 <body>
-<form class="form-horizontal login" action="/dashboard/login" method="post" >
+<%
+    action = reverse('login') if not to else '{}?to={}'.format(reverse('login'),to)
+%>
+<form class="form-horizontal login" action="${action}" method="post" >
   ${csrf_token}
-    <p class="login_nav">欢迎来到dashboard登录页</p>
+    <p class="login_nav" >欢迎来到dashboard !</p>
   <div class="form-group">
     <div class="col-sm-10">
       <input type="text" name="username" class="form-control" id="user" placeholder="用户名">
