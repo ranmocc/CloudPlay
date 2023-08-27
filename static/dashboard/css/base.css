@@ -8,7 +8,7 @@ html,body{
 #base_area{
     width:100%;
     position:relative;
-    height:100%;
+    height:94.5%;
 }
 .navbar{
     margin-bottom:0;
@@ -21,12 +21,14 @@ html,body{
     left: 0;
     top: 0;
     padding-left: 0;
+    margin-bottom: 0;
+    background-color: #2e6da4;
 }
 .left_menu >li{
     text-align: center;
     line-height: 50px;
     cursor: pointer;
-    border:1px solid #cccccc;
+    border:1px solid #2e6da4;
     border-right: none;
 }
 .right_content{
@@ -36,4 +38,11 @@ html,body{
     right: 0;
     top: 0;
     border-left: 1px solid #cccccc;
+}
+.left_side{
+    color: white;
+}
+.left_side:hover{
+    color: deepskyblue;
+    text-decoration: none;
 }

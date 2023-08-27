@@ -12,9 +12,9 @@
 <%include file="nav.html"/>
 <div id="base_area">
 <ul class="left_menu">
-    <li><a href="${reverse('dashboard_admin')}">管理员</a></li>
-    <li>用户</li>
-    <li>视频</li>
+    <li><a class="left_side" href="${reverse('dashboard_admin')}">管理空间</a></li>
+    <li><a class="left_side" href="#">用户</a></li>
+    <li><a class="left_side" href="${reverse('other_video')}">视频</a></li>
 </ul>
 <div class="right_content">
 ${self.content()}

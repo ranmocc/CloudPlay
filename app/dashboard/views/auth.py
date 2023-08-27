@@ -51,7 +51,7 @@ class Logout(View):
         logout(request)
         return redirect(reverse('login'))
 class Admin(View):
-    TEMPLATE = '/dashboard/auth/admin.html'
+    TEMPLATE = '/dashboard/admin/admin.html'
     @dashboard_auth
     def get(self,request):
         users = User.objects.all()

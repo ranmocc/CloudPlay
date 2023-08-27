@@ -1,11 +1,11 @@
 html,body{
     font-size: medium;
-    background-color: #F6F6F6;
+    background-color: steelblue;
 }
 .login{
-    background-color: #96b97dab;
-    width: 50%;
-    height: 40%;
+    background-color: lightskyblue;
+    width: 30%;
+    height: 50%;
     margin: 12% auto;
     border: 1px solid #cccccc;
     padding: 8%;
@@ -13,13 +13,11 @@ html,body{
 }
 #user{
     position: absolute;
-    left: 20%;
-    width: 70%;
+    left: 10%;
 }
 #pass{
     position: absolute;
-    left: 20%;
-    width: 70%;
+    left: 10%;
     top: 40px;
 }
 .btn{
@@ -31,6 +29,6 @@ html,body{
     font-size: x-large;
     width: 40%;
     position: absolute;
-    top: 12%;
-    left: 34%;
+    top: 5%;
+    left: 30%;
 }
