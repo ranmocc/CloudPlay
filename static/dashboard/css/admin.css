@@ -1,0 +1,28 @@
+h1{
+    position: relative;
+    top: 5%;
+    left: 35%;
+}
+#admin_table{
+    position: relative;
+    top: 10%;
+    left: 15%;
+    width: 60%;
+    height: 300px;
+}
+tr,th,td{
+    text-align: center;
+    width: 10%;
+    height: 50px;
+    border-top: 1px black solid;
+}
+.left{
+    position: relative;
+    left: 30%;
+    top: 20%;
+}
+.right{
+    position: relative;
+    left: 50%;
+    top: 20%;
+}

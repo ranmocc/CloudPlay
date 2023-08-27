@@ -1,0 +1,61 @@
+<%inherit file="../base.html" />
+<%! from django.shortcuts import reverse %>
+<%def name="title()">附属信息</%def>
+
+<%def name="content()">
+
+<% from app.model.video import FromType,StarIdentity %>
+    <div id="header">
+        <button><a href="${reverse('other_video')}">返回</a></button>
+        <span>附属信息</span>
+    </div>
+    <img id="img" src="${video.image}">
+
+    <ul id="show">
+        <h1>${video.name}</h1>
+        <li><span>来源：</span>${FromType(video.from_to).label}</li>
+        <br>
+        <li><span>演员：</span>
+            <ul class="star">
+                %for i in video.video_star.all():
+                <li><a href="${reverse('star_delete',kwargs={'star_id': i.id,'video_id':video.id})}">${StarIdentity(i.identity).label}：${i.name}，</a></li>
+                %endfor
+            </ul>
+        </li>
+        <br>
+        <li><span>简介：</span>${video.description}</li>
+        <br>
+        <li><span>剧集：</span>
+            <ul class="episodes">
+                %for i in video.video_sub.all():
+                <li><a href="${i.url}">第${i.number}集，</a></li>
+                %endfor
+            </ul>
+        </li>
+    </ul>
+
+    <div id="control">
+        <p>控制区</p>
+        <form class="left" method="post" action="${reverse('video_sub_star')}">${csrf_token}
+            <label>添加主演</label>
+            <input type="text" name="name">
+            <input type="submit" value="添加">
+            <label class="identity">添加身份</label>
+            <select class="select" name="identity">
+                %for identity in StarIdentity:
+                <option value="${identity.value}">${identity.label}</option>
+                %endfor
+            </select>
+            <input type="hidden" value="${video.id}" name="video_id" />
+        </form>
+        <form class="right" method="post">${csrf_token}
+            <label>添加地址</label>
+            <input type="text" name="url">
+            <input type="submit" value="添加">
+        </form>
+    </div>
+</%def>
+
+<%def name="css()">
+<link href="/static/dashboard/css/video_sub.css" rel="stylesheet">
+</%def>

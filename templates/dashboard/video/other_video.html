@@ -1,0 +1,79 @@
+<%inherit file="../base.html" />
+<%! from django.shortcuts import reverse %>
+<%def name="title()">视频</%def>
+
+<%def name="content()">
+
+<% from app.model.video import VideoType,FromType,National %>
+
+<h1>视频</h1>
+<button class="btn" id="control_video">创建</button>
+<p class="arrow">= ></p>
+<form class="form-horizontal table" id="table" action="" method="post" >
+  ${csrf_token}
+    <input type="text" name="name" class="form-control video_name" placeholder="视频名称">
+    <input type="text" name="image" class="form-control poster"  placeholder="海报">
+    <select class="select video_type" name="video_type">
+        %for video_type in VideoType:
+        <option value="${video_type.value}">${video_type.label}</option>
+        %endfor
+    </select>
+    <select class="select from_to" name="from_to">
+        %for from_to in FromType:
+        <option value="${from_to.value}">${from_to.label}</option>
+        %endfor
+    </select>
+    <select class="select nationality" name="nationality">
+        %for nationality in National:
+        <option value="${nationality.value}">${nationality.label}</option>
+        %endfor
+    </select>
+    <input type="text" name="description" class="description" placeholder="请在这里输入你的描述。。。">
+
+    <button name="add" class="btn add">添加</button>
+</form>
+
+<table class="list_table">
+    <thead>
+        <tr>
+            <th>视频名称</th>
+            <th>海报</th>
+            <th>视频来类型</th>
+            <th>视频来源</th>
+            <th>国籍</th>
+            <th>描述</th>
+            <th>状态</th>
+            <th id="created_time">创建时间</th>
+            <th id="updated_time">更新时间</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        % for video in videos:
+        <tr>
+            <td>${video.name}</td>
+            <td><img class="list_img" src="${video.image}"></td>
+            <td>${VideoType(video.video_type).label}</td>
+            <td>${FromType(video.from_to).label}</td>
+            <td>${National(video.nationality).label}</td>
+            <td><p class="list_description">${video.description}</p></td>
+            <td class="status">${video.status}</td>
+            <td>${video.created_time}</td>
+            <td>${video.updated_time}</td>
+            <td><a>编辑</a>|<a href="${reverse('video_sub',kwargs={'video_id':video.id})}">附加信息</a></td>
+        </tr>
+        % endfor
+    </tbody>
+</table>
+
+
+
+</%def>
+
+<%def name="css()">
+<link href="/static/dashboard/css/other_video.css" rel="stylesheet">
+</%def>
+
+<%def name ="js()">
+<script src="/static/dashboard/js/other_video.js"></script>
+</%def>

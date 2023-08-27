@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>${self.title()}</title>
+    <link href="/static/dashboard/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/dashboard/css/base.css" rel="stylesheet">
+    ${self.css()}
+</head>
+<body>
+<%! from django.shortcuts import redirect,reverse %>
+<%include file="nav.html"/>
+<div id="base_area">
+<ul class="left_menu">
+    <li><a class="left_side" href="${reverse('dashboard_admin')}">管理空间</a></li>
+    <li><a class="left_side" href="#">用户</a></li>
+    <li><a class="left_side" href="${reverse('other_video')}">视频</a></li>
+</ul>
+<div class="right_content">
+${self.content()}
+</div>
+</div>
+
+</body>
+<script src="/static/dashboard/js/jquery-1.12.4.min.js"></script>
+<script src="/static/dashboard/js/bootstrap.js"></script>
+${self.js()}
+</html>
+
+<%def name = "title()"></%def>
+<%def name = "js()"></%def>
+<%def name = "css()"></%def>
+<%def name = "content()"></%def>

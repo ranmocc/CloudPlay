@@ -1,0 +1,34 @@
+html,body{
+    font-size: medium;
+    background-color: steelblue;
+}
+.login{
+    background-color: lightskyblue;
+    width: 30%;
+    height: 50%;
+    margin: 12% auto;
+    border: 1px solid #cccccc;
+    padding: 8%;
+    position: relative;
+}
+#user{
+    position: absolute;
+    left: 10%;
+}
+#pass{
+    position: absolute;
+    left: 10%;
+    top: 40px;
+}
+.btn{
+    position: absolute;
+    top: 80px;
+    left: 30%;
+}
+.login_nav{
+    font-size: x-large;
+    width: 40%;
+    position: absolute;
+    top: 5%;
+    left: 30%;
+}

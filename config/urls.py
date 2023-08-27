@@ -5,7 +5,7 @@ from app.dashboard import urls as dashboard_urls
 from app.client import  urls as client_urls
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('dashboard/',include(dashboard_urls)),
     path('client/',include(client_urls))
 ]
